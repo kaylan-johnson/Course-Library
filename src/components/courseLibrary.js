@@ -6,6 +6,7 @@ class CourseLibrary extends Component {
 
     constructor(props) {
         super(props)
+        
         this.renderCourse = this.renderCourse.bind(this);
     }
 
