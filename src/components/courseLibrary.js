@@ -24,8 +24,8 @@ class CourseLibrary extends Component {
                     <div className="course_title">{course.title}</div>
                 </div>
                 <a>Arrow</a>
-                <a className= {`"action slot_remove" ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>Add</a>
-                <a className= {`"action slot_remove" ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>Remove</a>
+                <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>Add</a>
+                <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>Remove</a>
 
             </div>
             <div className="course_description">
@@ -52,15 +52,16 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return { fetchCourses:() => {
+    return { 
+        fetchCourses:() => {
         dispatch(fetchCourses())
 
     },
     addCourse:(course) => {
-        dispatch(addCourse())
+        dispatch(addCourse(course))
     },
     removeCourse:(course) => {
-        dispatch(removeCourse())
+        dispatch(removeCourse(course))
     }
 }
     
