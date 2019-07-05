@@ -1,4 +1,4 @@
-import { FETCH_COURSES, REMOVE_COURSE, ADD_COURSE } from './types';
+import { FETCH_COURSES, REMOVE_COURSE, ADD_COURSE, TOGGLE_DESCRIPTION } from './types';
 
 export function fetchCourses() {
     return {
@@ -7,19 +7,25 @@ export function fetchCourses() {
             {
             "title": "Up and Running with Redis",
             "description": "In this course you'll learn how to work with the efficient Redis database to manage key value relationships.",
-            "enrolled": false
+            "enrolled": false,
+            "open": "false"
+
         },
            
             {
             "title": "UX for Developers",
             "description": "This User Experience(UX) course examines how to develop a system for approaching application development and enhancing the experience for users.",
-            "enrolled": false
+            "enrolled": false,
+            "open": "false"
+
         },
 
         {
             "title": "palsdfpasldfpals",
             "description": "Tsadkfhaskdjhfasdhjf;ajsdhf;lashdfjaksdlfjhaskdfjhsalkdjfh for approaching application development and enhancing the experience for users.",
-            "enrolled": false
+            "enrolled": false,
+            "open": "false"
+
         }
 
 
@@ -42,4 +48,11 @@ export function addCourse(course) {
         payload:  course 
 
 }
+}
+
+export function toggleDescription(course) {
+    return {
+        type: TOGGLE_DESCRIPTION,
+        payload: course
+    }
 }
