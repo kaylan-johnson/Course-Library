@@ -19,7 +19,7 @@ class Schedule extends Component {
         return (
             <div key={this.state.enrolled.indexOf(course)} className={`slot ${course.enrolled ? 'slot_course' : 'slot_empty'}`}>
             <div>{course.enrolled ? course.title : "Empty Slot"}</div>
-            <a className= {`action slot_remove`} onClick={() => this.props.removeCourse(course)}>Remove Course</a>
+            <a className= {`action slot_remove`} onClick={() => this.props.removeCourse(course)}></a>
             </div>
         )
     }
