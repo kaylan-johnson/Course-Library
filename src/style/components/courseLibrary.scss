@@ -118,7 +118,16 @@
 
 .course_remove {
     @include add-button;
-    transform: rotate(45deg);
+    // transform: rotate(45deg);
+
+    &:before { 
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+
+    &:after { 
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
 }
 
 
